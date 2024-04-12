@@ -1,0 +1,47 @@
+.planet{
+    width: 40px;
+    height: 40px;
+    margin-left: 0px;
+    position: relative;
+    animation: rotate 2s linear infinite;
+}
+
+.planet:hover{
+    animation: none;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.planet-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.single-planet {
+    width: 18%;
+    margin-bottom: 10px;
+    text-align: center;
+}
