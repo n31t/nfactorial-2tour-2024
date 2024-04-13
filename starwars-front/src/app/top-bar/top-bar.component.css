@@ -6,9 +6,17 @@
     background-color: black;
     padding-left: 0;
     padding-right: 0;
+    border-bottom: 1px solid rgb(255, 242, 0);
+}
+
+.middle-link{
+    margin-top: 40px;
+    margin-left: auto;
+    height: 100%;
 }
 
 .logo{
     width:150px;
     margin-left: 50px;
+    margin-bottom: 5px;
 }
