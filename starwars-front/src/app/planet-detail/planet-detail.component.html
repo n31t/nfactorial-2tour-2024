@@ -20,7 +20,7 @@
         <h2>Residents</h2>
         <ul>
             <li *ngFor="let resident of residents">
-                <a>{{ resident.name }}</a>
+                <a [routerLink]="['/people', resident.id]">{{ resident.name }}</a>
             </li>
         </ul>
     </div>

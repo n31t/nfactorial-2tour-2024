@@ -36,8 +36,8 @@
 
 .medium-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     height: 250px;
     width: 40%;
     margin: auto;
@@ -45,6 +45,17 @@
     border: 1px solid;
     border-radius: 30px;
     border-color: yellow;
+}
+
+.medium-container .text{
+    font-size: 13px;
+    text-align: left;
+    margin-left: auto;
+}
+
+.medium-container .text a{
+    color: rgb(12, 105, 172);
+    text-decoration: none;
 }
 
 .planet-info{
