@@ -63,7 +63,7 @@ ul{
 .load img{
     width: 80px;
     height: 80px;
-    animation: loading 2s linear infinite;
+    animation: loading 2s  ease-in-out infinite;
 }
 
 @keyframes loading {

@@ -1,1 +1,13 @@
-<p>planet-detail works!</p>
+<div class="big-container" *ngIf="loaded; else loading">
+    <div class="planet-info">
+        <img class="planet" src="assets/images/{{ planetId }}.png" onerror="this.src='assets/images/default.png'" alt="{{ planet.name }}">
+        <a [routerLink]="['/planets', planet.id]" >{{ planet.name }}</a>
+    </div>
+</div>
+
+<ng-template #loading>
+    <div class="load">
+        <img src="assets/images/load.png">
+    </div>
+    
+</ng-template>

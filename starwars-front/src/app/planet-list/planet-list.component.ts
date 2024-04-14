@@ -8,7 +8,6 @@ import { StarwarsService } from '../starwars.service';
   styleUrl: './planet-list.component.css'
 })
 export class PlanetListComponent implements OnInit{
-  // number_of_planets = Array(60);
   planets !: Planet[];
   loaded = false;
   constructor(private starwarsService: StarwarsService){

@@ -24,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
       { path: 'main-page', component: BigTextComponent, title : 'StarWars Archive'},
       { path: 'planets', component: PlanetListComponent, title : 'Planets' },
       {path: 'search', component: SearchComponent, title : 'Search'},
-      {path: 'planets/:planetId', component: PlanetDetailComponent, title : 'Planet Detail'},
+      {path: 'planets/:id', component: PlanetDetailComponent, title : 'Planet Detail'},
       // {path: 'search/planets', component: PlanetListComponent, title : 'Search Planets'},
       {path: '**', component: NotFoundComponent, title : 'Not Found'}
     ])
