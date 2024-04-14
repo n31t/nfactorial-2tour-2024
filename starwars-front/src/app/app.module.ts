@@ -9,16 +9,23 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { BigTextComponent } from './big-text/big-text.component';
+import { SearchComponent } from './search/search.component';
+import { PlanetDetailComponent } from './planet-detail/planet-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     NgbModule,
+    HttpClientModule,
     RouterModule.forRoot([
-      { path: '', redirectTo:'big-text', pathMatch: 'full' },
-      { path: 'big-text', component: BigTextComponent, title : 'Big Text'},
+      { path: '', redirectTo:'main-page', pathMatch: 'full' },
+      { path: 'main-page', component: BigTextComponent, title : 'StarWars Archive'},
       { path: 'planets', component: PlanetListComponent, title : 'Planets' },
+      {path: 'search', component: SearchComponent, title : 'Search'},
+      {path: 'planets/:planetId', component: PlanetDetailComponent, title : 'Planet Detail'},
+      // {path: 'search/planets', component: PlanetListComponent, title : 'Search Planets'},
       {path: '**', component: NotFoundComponent, title : 'Not Found'}
     ])
   ],
@@ -28,6 +35,8 @@ import { BigTextComponent } from './big-text/big-text.component';
     TopBarComponent,
     BigTextComponent,
     NotFoundComponent,
+    SearchComponent,
+    PlanetDetailComponent,
   ],
   bootstrap: [
     AppComponent
