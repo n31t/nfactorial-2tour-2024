@@ -12,6 +12,7 @@ import { BigTextComponent } from './big-text/big-text.component';
 import { SearchComponent } from './search/search.component';
 import { PlanetDetailComponent } from './planet-detail/planet-detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PersonDetailComponent } from './person-detail/person-detail.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
       { path: 'planets', component: PlanetListComponent, title : 'Planets' },
       {path: 'search', component: SearchComponent, title : 'Search'},
       {path: 'planets/:id', component: PlanetDetailComponent, title : 'Planet Detail'},
+      {path: 'people/:id', component: PersonDetailComponent, title : 'Person Detail'},
       // {path: 'search/planets', component: PlanetListComponent, title : 'Search Planets'},
       {path: '**', component: NotFoundComponent, title : 'Not Found'}
     ])
@@ -37,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     NotFoundComponent,
     SearchComponent,
     PlanetDetailComponent,
+    PersonDetailComponent,
   ],
   bootstrap: [
     AppComponent

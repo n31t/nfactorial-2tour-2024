@@ -1,11 +1,11 @@
 <div class="planet-container" *ngIf="loaded; else loading">
     <ul *ngFor="let planet of planets">
-    <li>
-    <div class="single-planet">
-        <img class="planet" src="assets/images/{{ planet.id }}.png" onerror="this.src='assets/images/default.png'" alt="{{ planet.name }}">
-        <a [routerLink]="['/planets', planet.id]" >{{ planet.name }}</a>
-    </div>
-    </li>
+        <li>
+            <div class="single-planet">
+                <img class="planet" src="assets/images/{{ planet.id }}.png" onerror="this.src='assets/images/default.png'" alt="{{ planet.name }}">
+                <a [routerLink]="['/planets', planet.id]" >{{ planet.name }}</a>
+            </div>
+        </li>
     </ul>
 </div>
 
@@ -13,5 +13,4 @@
     <div class="load">
         <img src="assets/images/load.png">
     </div>
-    
 </ng-template>

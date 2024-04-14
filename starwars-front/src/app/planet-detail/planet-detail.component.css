@@ -34,6 +34,19 @@
     border-color: yellow;
 }
 
+.medium-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 40%;
+    margin: auto;
+    margin-top: 50px;
+    border: 1px solid;
+    border-radius: 30px;
+    border-color: yellow;
+}
+
 .planet-info{
     align-items: left;
 }
@@ -41,14 +54,14 @@
 .planet{
     width: 100px;
     margin-left: 100px;
+    margin-right: 500px;
 }
 
-.planet-info a{
+.text{
     color: white;
-    text-decoration: none;
     font-family: 'Roboto', sans-serif;
-    font-size: 15px;
-    margin: 0 auto auto 10px;
+    font-size: 10px;
+    margin: 10px auto auto 10px;
     text-align: center;
     white-space: nowrap;
 }

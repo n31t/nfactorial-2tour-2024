@@ -1,7 +1,28 @@
 <div class="big-container" *ngIf="loaded; else loading">
     <div class="planet-info">
         <img class="planet" src="assets/images/{{ planetId }}.png" onerror="this.src='assets/images/default.png'" alt="{{ planet.name }}">
-        <a [routerLink]="['/planets', planet.id]" >{{ planet.name }}</a>
+    </div>
+    <div class="text">
+        <h1>{{ planet.name }}</h1>
+        <p><strong>Climate:</strong> {{ planet.climate }}</p>
+        <p><strong>Population:</strong> {{ planet.population }}</p>
+        <p><strong>Orbital Period:</strong> {{ planet.orbital_period }} days</p>
+        <p><strong>Rotation Period:</strong> {{ planet.rotation_period }} days</p>
+        <p><strong>Diameter:</strong> {{ planet.diameter }} m</p>
+        <p><strong>Gravity:</strong> {{ planet.gravity }}</p>
+        <p><strong>Surface Water:</strong> {{ planet.surface_water }}%</p>
+        <p><strong>Terrain:</strong> {{ planet.terrain }}</p>
+    </div>
+</div>
+
+<div class="medium-container">
+    <div class="text">
+        <h2>Residents</h2>
+        <ul>
+            <li *ngFor="let resident of residents">
+                <a>{{ resident.name }}</a>
+            </li>
+        </ul>
     </div>
 </div>
 

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Planet } from './models';
+import { Person, Planet } from './models';
 import { Observable, forkJoin, range} from 'rxjs';
 import { map, switchMap} from 'rxjs/operators';
 
@@ -40,5 +40,8 @@ export class StarwarsService {
 
     getPlanet(id: number): Observable<Planet> {
         return this.http.get<Planet>(`${this.BASE_URL}/planets/${id}/`)
+    }
+    getResident(id: number): Observable<Person> {
+        return this.http.get<Person>(`${this.BASE_URL}/people/${id}/`)
     }
 }
