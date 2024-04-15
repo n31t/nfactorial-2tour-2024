@@ -1,5 +1,32 @@
-<div>
-    <div>
-        <h1>{{ person.name }}</h1>
+<div class="big-container" *ngIf="loaded; else loadingTemplate">
+    <div class="person-info">
+        <img class="person" src="assets/images/residents/{{person.id}}.png" onerror="this.src='assets/images/residents/default.png'" alt="{{ person.name }}">
     </div>
+    <div class="text">
+        <h1>{{ person.name }}</h1>
+        <p><strong>Height:</strong> {{ person.height }} cm</p>
+        <p><strong>Mass:</strong> {{ person.mass }} kg</p>
+        <p><strong>Hair Color:</strong> {{ person.hair_color }}</p>
+        <p><strong>Skin Color:</strong> {{ person.skin_color }}</p>
+        <p><strong>Eye Color:</strong> {{ person.eye_color }}</p>
+        <p><strong>Birth Year:</strong> {{ person.birth_year }}</p>
+        <p><strong>Gender:</strong> {{ person.gender }}</p>
+        <p><strong>Homeworld:</strong> <a [routerLink]="['/planets', planet.id]"> {{planet.name}}</a></p>      
+    </div>  
 </div>
+<!-- <div class="medium-container">
+    <div class="text">
+        <h2>Spaceships</h2>
+        <ul>
+            <li *ngFor="let spaceship of spaceships">
+                <a [routerLink]="['/spaceships', spaceship.id]">{{ spaceship.name }}</a>
+            </li>
+        </ul>
+            <p *ngIf="spaceships.length == 0">There are no spaceships in this planet.</p>
+    </div>
+</div> -->
+<ng-template #loadingTemplate>
+    <div class="load">
+        <img src="assets/images/load.png">
+    </div>
+</ng-template>

@@ -23,6 +23,7 @@
                 <a [routerLink]="['/people', resident.id]">{{ resident.name }}</a>
             </li>
         </ul>
+            <p *ngIf="residents.length == 0">There are no residents in this planet.</p>
     </div>
 </div>
 

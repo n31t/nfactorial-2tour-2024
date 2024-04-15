@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Person, Planet } from './models';
+import { Person, Planet, Starship } from './models';
 import { Observable, forkJoin, range} from 'rxjs';
 import { map, switchMap} from 'rxjs/operators';
 
@@ -18,11 +18,6 @@ export class StarwarsService {
 
     constructor(private http: HttpClient) { }
 
-    // getPlanets(): Observable<Planet[]> {
-    //     return this.http.get<ApiResponse>(`${this.BASE_URL}/planets/`).pipe(
-    //         map(response=> response.results)
-    //     );
-    // }
     getPlanets(): Observable<Planet[]> {
         let count = this.http.get<ApiResponse>(`${this.BASE_URL}/planets/`).pipe(
             map(response=> response.count)
@@ -43,5 +38,8 @@ export class StarwarsService {
     }
     getResident(id: number): Observable<Person> {
         return this.http.get<Person>(`${this.BASE_URL}/people/${id}/`)
+    }
+    getStarship(id: number): Observable<Starship> {
+        return this.http.get<Starship>(`${this.BASE_URL}/starships/${id}/`)
     }
 }
