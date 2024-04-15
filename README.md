@@ -1,15 +1,15 @@
-# Star Wars Planet Explorer
+# Star Wars Archive
 
 This project is a simple web application that allows users to explore planets in the Star Wars universe.
 
 ## Features
 
-- Fetch and display a list of planets from the Star Wars API.[Star Wars API](https://swapi.dev/).
+- Fetch and display a list of planets from the Star Wars API. [API](https://swapi.dev/).
 - Free to use planets images from "Free to use" png sites.
 - My own made logo, that was made via using Adobe Photoshop.
 - Animations for each planet and for loading the page.
-- Search functionality to find a planet.
-- Cool Star Wars text on main page and on not found one.
+- Search functionality to find a planet, character and starship.
+- Cool Star Wars text on main page and on "404notfound" one.
 
 ## Problems and solutions
 
