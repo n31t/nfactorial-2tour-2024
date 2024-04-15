@@ -4,11 +4,20 @@ import { Person, Planet, Starship } from './models';
 import { Observable, forkJoin, range} from 'rxjs';
 import { map, switchMap} from 'rxjs/operators';
 
-interface ApiResponse {
+interface ApiResponseForPlanets {
     count: number | undefined;
     results: Planet[];
 }
 
+interface ApiResponseForPeople {
+    count: number | undefined;
+    results: Person[];
+}
+
+interface ApiResponseForStarships {
+    count: number | undefined;
+    results: Starship[];
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +28,7 @@ export class StarwarsService {
     constructor(private http: HttpClient) { }
 
     getPlanets(): Observable<Planet[]> {
-        let count = this.http.get<ApiResponse>(`${this.BASE_URL}/planets/`).pipe(
+        let count = this.http.get<ApiResponseForPlanets>(`${this.BASE_URL}/planets/`).pipe(
             map(response=> response.count)
         );
         return count.pipe(
@@ -41,5 +50,20 @@ export class StarwarsService {
     }
     getStarship(id: number): Observable<Starship> {
         return this.http.get<Starship>(`${this.BASE_URL}/starships/${id}/`)
+    }
+    searchPlanets(query: string): Observable<Planet[]> {
+        return this.http.get<ApiResponseForPlanets>(`${this.BASE_URL}/planets/?search=${query}`).pipe(
+            map(response=> response.results)
+        );
+    }
+    searchResidents(query: string): Observable<Person[]> {
+        return this.http.get<ApiResponseForPeople>(`${this.BASE_URL}/people/?search=${query}`).pipe(
+            map(response=> response.results)
+        );
+    }
+    searchStarships(query: string): Observable<Starship[]> {
+        return this.http.get<ApiResponseForStarships>(`${this.BASE_URL}/starships/?search=${query}`).pipe(
+            map(response=> response.results)
+        );
     }
 }

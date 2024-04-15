@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PlanetListComponent } from './planet-list/planet-list.component';
@@ -21,6 +21,7 @@ import { StarshipDetailComponent } from './starship-detail/starship-detail.compo
     ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: '', redirectTo:'main-page', pathMatch: 'full' },
       { path: 'main-page', component: BigTextComponent, title : 'StarWars Archive'},

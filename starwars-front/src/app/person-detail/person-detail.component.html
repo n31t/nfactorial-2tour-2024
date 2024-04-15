@@ -14,17 +14,17 @@
         <p><strong>Homeworld:</strong> <a [routerLink]="['/planets', planet.id]"> {{planet.name}}</a></p>      
     </div>  
 </div>
-<!-- <div class="medium-container">
+<div class="medium-container">
     <div class="text">
-        <h2>Spaceships</h2>
+        <h2>Starships</h2>
         <ul>
-            <li *ngFor="let spaceship of spaceships">
-                <a [routerLink]="['/spaceships', spaceship.id]">{{ spaceship.name }}</a>
+            <li *ngFor="let starship of starships">
+                <a [routerLink]="['/starships', starship.id]">{{ starship.name }}</a>
             </li>
         </ul>
-            <p *ngIf="spaceships.length == 0">There are no spaceships in this planet.</p>
+            <p *ngIf="starships.length == 0">There are no starships in this planet.</p>
     </div>
-</div> -->
+</div>
 <ng-template #loadingTemplate>
     <div class="load">
         <img src="assets/images/load.png">

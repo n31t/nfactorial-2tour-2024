@@ -1,1 +1,44 @@
-<p>search works!</p>
+<div class="input-search">
+    <input type="text" [(ngModel)]="searchQuery" (keyup.enter)="search()" placeholder="Search for a planet">
+</div>
+<div class="big-container" *ngIf="loaded; else loading">
+    <div class="planet-container">
+        <h1>Planets: </h1>
+    <ul *ngFor="let planet of planets">
+        <li>
+            <div class="single-planet">
+                <img class="img" src="assets/images/{{ planet.id }}.png" onerror="this.src='assets/images/default.png'" alt="{{ planet.name }}">
+                <a [routerLink]="['/planets', planet.id]" >{{ planet.name }}</a>
+            </div>
+        </li>
+    </ul>
+    <p *ngIf="planets.length == 0">No planets found.</p>
+    </div>
+    <div class="planet-container">
+        <h1>People:</h1>
+        <ul *ngFor="let person of residents">
+            <li>
+                <div class="single-planet">
+                    <img class="img" src="assets/images/residents/{{person.id}}.png" onerror="this.src='assets/images/residents/default.png'" alt="{{ person.name }}">
+                    <a [routerLink]="['/people', person.id]">{{ person.name }}</a>
+                </div>
+            </li>
+        </ul>
+        <p *ngIf="residents.length == 0">No people found.</p>
+    </div>
+    <div class="planet-container">
+        <h1>Starships:</h1>
+        <ul *ngFor="let starship of starships">
+            <li>
+                <div class="single-planet">
+                    <img class="img" src="assets/images/starships/{{starship.id}}.png" onerror="this.src='assets/images/starships/default.png'" alt="{{ starship.name }}">
+                    <a [routerLink]="['/starships', starship.id]">{{ starship.name }}</a>
+                </div>
+            </li>
+        </ul>
+        <p *ngIf="starships.length == 0">No starships found.</p>
+    </div>
+</div>
+<ng-template #loading>
+</ng-template>
+

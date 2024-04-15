@@ -1,0 +1,74 @@
+.load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.load img{
+    width: 80px;
+    height: 80px;
+    animation: loading 2s  ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.big-container {
+    display: flex;
+    align-items: center;
+    height: 330px;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    border: 1px solid;
+    border-radius: 30px;
+    border-color: yellow;
+}
+
+.medium-container {
+    display: flex;
+    height: 230px;
+    width: 40%;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid;
+    border-radius: 30px;
+    border-color: yellow;
+}
+
+.medium-container .text{
+    font-size: 13px;
+    text-align: left;
+    margin-left: auto;
+}
+
+.text a{
+    color: rgb(12, 105, 172);
+    text-decoration: none;
+}
+
+.starship-info{
+    align-items: left;
+}
+
+.starship{
+    width: 100px;
+    margin-left: 100px;
+    margin-right: 500px;
+}
+
+.text{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    margin: 10px auto auto 10px;
+    text-align: center;
+    white-space: nowrap;
+}

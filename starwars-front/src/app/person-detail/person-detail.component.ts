@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Person, Planet } from '../models';
+import { Person, Planet, Starship } from '../models';
 import { ActivatedRoute } from '@angular/router';
 import { StarwarsService } from '../starwars.service';
 
@@ -11,6 +11,7 @@ import { StarwarsService } from '../starwars.service';
 export class PersonDetailComponent implements OnInit{
   person !: Person;
   planet !: Planet;
+  starships : Starship[] = [];
   loaded = false;
   constructor(private route: ActivatedRoute, private starwarsService: StarwarsService) {
   }
@@ -28,6 +29,15 @@ export class PersonDetailComponent implements OnInit{
             planet => {
               this.planet = planet;
               this.planet.id = planetId;
+              this.person.starships.forEach((starshipUrl) => {
+                const starshipId = Number(starshipUrl.split('/')[5]);
+                this.starwarsService.getStarship(starshipId).subscribe(
+                  starship => {
+                    starship.id = starshipId;
+                    this.starships.push(starship);
+                  }
+                )
+              })
             }
           )
         }
