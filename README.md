@@ -19,6 +19,7 @@ This project is a simple web application that allows users to explore planets in
 - Lack of pictures for people and ships. I considered this a minor task. I have done everything correctly, but I do not have PNG photos with ID in the folder.
 - Also, to replace the photo with default.png, I used the shortest way - display it when there is an error. There is a more adequate way - to create a function that will do this, but for a small web project it seems to me that my solution is enough.
 - There are also minor issues that I could solve, but I think they are not so critical
+- Added the Bootstrap library for navbar, but ended up not using it.
 
 ## Installation
 1. If you already know how to deal with Angular you probably don't need such instruction.
