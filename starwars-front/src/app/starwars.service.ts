@@ -9,21 +9,6 @@ import { map, switchMap} from 'rxjs/operators';
 //     results: Planet[];
 // }
 
-interface ApiResponseForPeople {
-    count: number | undefined;
-    results: Person[];
-}
-
-interface ApiResponseForStarships {
-    count: number | undefined;
-    results: Starship[];
-}
-
-interface ApiResponseForPlanets {
-    total_records: number | undefined;
-    results: Planet[];
-
-}
 @Injectable({
   providedIn: 'root'
 })
