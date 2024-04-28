@@ -27,6 +27,7 @@ export class SearchComponent {
           planet.id = id;
         });
         this.loaded = true;
+        console.log(this.planets);
       }
     );
     this.starwarsService.searchResidents(this.searchQuery).subscribe(

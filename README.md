@@ -35,3 +35,10 @@ ng serve
 2. Open in Browser:
 Open your web browser and visit `http://localhost:4200`.
 
+# UPD 28.04.2024
+- The site does not display a complete list of starships or people (not counting the search system). This was because everything was connected with the planets. By studying the planet, we could learn about its inhabitants and, further from the inhabitants, find out what ships they piloted. Now the current [API](https://swapi.tech/) is very raw and has no connection between planets and inhabitants and has many disadvantages.
+- The ships also have no pilots
+- Due to the poor API, I advise you to use the search to find the necessary planets, starships and characters
+- I rewrote starwars.service.ts to the current API. Added Pagination to "search" (search.component.html)
+
+
